@@ -1,0 +1,79 @@
+TIL(2021.12.23)
+=============
+#버전 관리 시스템
+------------
+Achievement Goals
+---------------
+*Git의 환경설정을 할 수 있다.
+*버전 관리 시스템의 필요성을 이해할 수 있다.
+*Github과 Git의 관계에 대해 이해할 수 있다.
+*Repository에 대해 이해할 수 있다.
+*Local Repository와 Remote Repository의 차이를 이해할 수 있다.
+***************************
+#개발자 도구 git 설치
+-------------------------
+Achievement Goals
+------------------
+*자신이 사용하는 OS에 git 설치하는 방법을 익히고 실습한다.
+*git --version 명령어로 터미널에서 git이 설치되었는지 확인할 수 있다.
+*CLI 환경에서 git 명령어를 입력할 수 있다.
+*Advanced Challenge
+*터미널로 원격 서버에 접속하고 git을 설치하고 삭제 후 다시 설치할 수 있다.
+------------------------------
+터미널을 열고 sudo apt install git
+버전 확인을 위해 git --version
+>사용자 정보
+>     >터미널에 다음과 같이 입력하세요
+>     >     > $ git config --global user.name "sangha park"$ git config --global user.email "geakura123@gmail.com"
+******
+에디터
+-------------
+$ git config --global core.editor nano
+****************************
+SSH키 생성
+----------------------
+>ssh-keygen
+>     >[명령어] ssh 키를 생성합니다.
+
+>다음의 명령어를 프롬프트에 입력하여, 공개키를 복사합니다.
+>     >cat ~/.ssh/id_rsa.pub
+복사한것을 github에 가서 붙여넣으면 된다
+***********************************
+git
+===========================
+상황에 따라 Github의 기능과 Git 명령어를 사용할 수 있다.
+Fork
+clone
+status
+restore
+add
+commit
+reset
+log
+pull
+push
+init
+remote add
+remote -v
+Git의 세 가지 영역 및 상태를 이해할 수 있다. (Committed, modified, staged)
+Remote Repository를 페어와 공유하며 협업을 할 수 있다.
+충돌이 발생했을 경우 해결할 수 있다.
+--------------------------------------
+혼자 작업 Work flow
+--------------------------------------
+fork를 해서 remote repository 로 찝어오고 작업을 하기 위해서 자신의 local repository로 clone 해서 사용한다
+되돌리고 싶으면 restore
+가장 최신의 commit 삭제 git reset HEAD^
+pull 하기 위해서는 git push origin main
+git log 로 로그 확인가능
+******************************************
+둘이 작업 Work flow
+-----------------------------
+원격으로 관리하기 위해서는 Local Repository를 Remote Repository와 연결하는 작업이 필요합니다.
+이 때 git remote add 명령어를 사용할 수 있습니다.
+git remote add origin 명령어 뒤에 입력함으로서 해당 Remote Repository와의 연결이 완료되었습니다.
+ git remote add pair ‘주소’를 입력해 상대방의 Repository와 연결했습니다.
+명령어를 입력했을 때 터미널창에 나타나는 변화는 없습니다.
+git remote -v 명령어를 통해 현재의 Local Repository와 연결된 모든 Remote Repository 목록을 확인할 수 있습니다.
+git pull pair master 명령어를 통해 페어의 Remote Repository에 있는 작업 내용을 받아올 수 있습니다.
+git status 명령어를 통해 어떤 파일이 충돌하고 있는지 확인할 수 있습니다.
